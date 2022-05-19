@@ -7,11 +7,12 @@ const subscriptionsDiv = document.getElementById('subscriptions');
 
 
 
-const apiKey = '4f4ac031-d782-41d9-89f9-0ddcac3b3b82';
-const webHook = 'https://webhook.site/b7f969ef-923e-4e40-9bf4-189cc9a91d49';
+const apiKey = 'edb47ab3-1838-458f-86a3-26d813a2a073';
+const webHook = 'https://webhook.site/059ea2b5-9a24-4d8d-a4db-108736871501';
 const region = 'us-west1';
 
-const walletAddress = 'F8Vyqk3unwxkXukZFQeYyGmFfTG3CAX4v24iyrjEYBJV';
+//F8Vyqk3unwxkXukZFQeYyGmFfTG3CAX4v24iyrjEYBJV
+const walletAddress = '8BGAoZprnrdgimycVYkAokhX8hSPTqNVtTJDsXZR7Esf';
 
 function subscribe(walletAddress) {
     fetch(`https://api-${region}.tatum.io/v3/subscription`, {
