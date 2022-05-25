@@ -5,14 +5,17 @@ const cancelSubscriptionButton = document.getElementById('cancelSubscription');
 const statusDiv = document.getElementById('status');
 const subscriptionsDiv = document.getElementById('subscriptions');
 
+const inputAddress = document.getElementById('addy');
+
 
 
 const apiKey = 'edb47ab3-1838-458f-86a3-26d813a2a073';
-const webHook = 'https://webhook.site/059ea2b5-9a24-4d8d-a4db-108736871501';
+const webHook = 'https://webhook.site/515347c3-faee-4dc2-b595-198787b895c7';
 const region = 'us-west1';
+const blockChain = 'ETH'
 
-//F8Vyqk3unwxkXukZFQeYyGmFfTG3CAX4v24iyrjEYBJV
-const walletAddress = '8BGAoZprnrdgimycVYkAokhX8hSPTqNVtTJDsXZR7Esf';
+//F8Vyqk3unwxkXukZFQeYyGmFfTG3CAX4v24iyrjEYBJV //0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+//const walletAddress = '8BGAoZprnrdgimycVYkAokhX8hSPTqNVtTJDsXZR7Esf';
 
 function subscribe(walletAddress) {
     fetch(`https://api-${region}.tatum.io/v3/subscription`, {
@@ -25,7 +28,7 @@ function subscribe(walletAddress) {
             type: 'ADDRESS_TRANSACTION',
             attr: {
                 address: walletAddress,
-                chain: 'SOL',
+                chain: blockChain,
                 url: webHook,
             },
         }),
@@ -78,7 +81,7 @@ function cancelSubscription(id) {
 }
 
 subscribeButton.addEventListener('click', () => {
-    subscribe(walletAddress);
+    subscribe(inputAddress.value);
 });
 
 listSubscriptionsButton.addEventListener('click', () => {
